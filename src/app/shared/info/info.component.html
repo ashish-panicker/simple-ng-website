@@ -1,0 +1,21 @@
+<div>
+  <h1 class="section-title">{{ title }}</h1>
+  <p>{{ paraText }}</p>
+  <div class="desc">
+    <h2 class="section-subtitle">{{ subTitle }}</h2>
+    <ul>
+      @if (containsLinks) { 
+        @for (item of linkItems; track $index) {
+          <li>
+            <a href="{{ item.url }}" target="_blank">{{ item.title }}</a>
+          </li>
+        } 
+      } @else {
+          @for (item of listItems; track $index) {
+            <li>{{ item }}</li>
+          }
+      }
+      
+    </ul>
+  </div>
+</div>
